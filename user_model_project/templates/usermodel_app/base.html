@@ -7,40 +7,50 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{url 'index'}">DJANGO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'usermodel_app:register' %}">Register</a>
-        </li>
+      <a class="navbar-brand" href="new_landing_page.html">Django</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        {% if user.is_authenticated %}
-          <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-        {% else %}
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'usermodel_app:user_login' %}">Login</a>
-        </li>
-        {% endif %}
-        <!--<li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>-->
-      </ul>
-    </div>
-  </div>
-</nav>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'usermodel_app:register' %}">Register</a>
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+          {% else %}
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'usermodel_app:user_login' %}">Login</a>
+          </li>
+          {% endif %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Explore
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://www.youtube.com">Youtube</a>
+              <a class="dropdown-item" href="https://www.google.com">Google Search</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="https://www.facebook.com">Facebook</a>
+            </div>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
 
     <div class="container">
 
@@ -50,10 +60,8 @@
     </div>
 
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" ></script>
+
 </html>
-
-
-
-<li></li>
-<li></li>
-<li></li>
